@@ -13,7 +13,7 @@ repo/
 ├── requirements.txt
 ├── .gitignore
 ├── data/
-│   ├── train.csv
+│   ├── train.csv.gz
 │   ├── val.csv
 │   └── test.csv
 └── models/
@@ -37,7 +37,7 @@ pip install -r requirements.txt
 
 ## Data
 
-Place the dataset splits in `data/` as `train.csv`, `val.csv`, and `test.csv` (already included in this repository). Each CSV has the columns:
+Place the dataset splits in `data/` as `train.csv.gz`, `val.csv`, and `test.csv` (already included in this repository). The training split is gzip-compressed to stay under hosting file-size limits; `pandas.read_csv` reads it transparently, no manual decompression needed. Each CSV has the columns:
 
 `video_id, text, like_count, is_reply, is_pinned, is_favorited, label`
 

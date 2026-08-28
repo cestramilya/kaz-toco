@@ -27,7 +27,7 @@ DATA_DIR = os.environ.get("DATA_DIR", "./data")
 OUTPUT_DIR = os.environ.get("OUTPUT_DIR", "./outputs/tfidf_logreg")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
-TRAIN_PATH = os.path.join(DATA_DIR, "train.csv")
+TRAIN_PATH = os.path.join(DATA_DIR, "train.csv.gz")  # pandas reads gzip transparently
 VAL_PATH = os.path.join(DATA_DIR, "val.csv")
 
 # ── Reproducibility ──────────────────────────────────────────────────────────
